@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Name Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/optimized/5X/8/2/7/9/8279241bd8d52f06e85736ac13eab16e0cce91cb_2_690x387.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            color: white; /* Make text white to stand out against the background */
+        }
+        #generatedName {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d87f0;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #2d87f0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #1d6eb1;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Roblox Name Generator</h1>
+    <p>Click the button below to generate a random Roblox name!</p>
+
+    <div id="generatedName">Your Roblox Name will appear here</div>
+
+    <button onclick="generateName()">Generate Name</button>
+
+    <footer>
+        by massivel0l
+    </footer>
+
+    <script>
+        // Lists of adjectives and nouns
+        const adjectives = ["Epic", "Mystic", "Shadow", "Flaming", "Silent", "Swift", "Brave", "Lucky", "Frozen", "Vengeful"];
+        const nouns = ["Knight", "Dragon", "Storm", "Pixel", "Wizard", "Hunter", "Flame", "Knight", "Bolt", "Vortex"];
+
+        // Function to generate a random name
+        function generateName() {
+            // Select a random adjective and noun
+            const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const noun = nouns[Math.floor(Math.random() * nouns.length)];
+            
+            // Optional: Add a random number to the name for uniqueness
+            const randomNumber = Math.floor(Math.random() * 1000);  // Random number between 0 and 999
+
+            // Combine the parts into a Roblox name
+            const robloxName = adj + noun + randomNumber;
+            
+            // Display the generated name
+            document.getElementById("generatedName").innerText = robloxName;
+        }
+    </script>
+
+</body>
+</html>
